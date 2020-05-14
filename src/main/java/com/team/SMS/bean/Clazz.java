@@ -2,9 +2,11 @@ package com.team.SMS.bean;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class Clazz {
     //班级信息
     private Integer id;
@@ -17,7 +19,6 @@ public class Clazz {
     private String email;
     //所属年级
     private String grade_name;
-
     public Clazz(String name, String grade_name) {
         this.name = name;
         this.grade_name = grade_name;

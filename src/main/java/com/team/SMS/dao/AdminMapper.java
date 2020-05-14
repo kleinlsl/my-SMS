@@ -39,7 +39,7 @@ public interface AdminMapper {
     int insert(Admin admin);
 
     /**
-     * @description: 根据姓名查询指定/所有管理员信息列表
+     * @description: 根据姓名模糊查询指定|所有管理员信息 列表
      * @param:
      * @date: 2020/5/11 - 20:25
      * @return:
@@ -47,7 +47,7 @@ public interface AdminMapper {
     List<Admin> selectList(Admin admin);
 
     /**
-     * @description: 根据id更新指定管理员信息列表
+     * @description: 根据id更新指定管理员信息列表 ： 密码除外
      * @param:
      * @date: 2020/5/11 - 20:26
      * @return:

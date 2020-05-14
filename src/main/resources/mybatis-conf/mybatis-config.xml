@@ -2,31 +2,35 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <!--    加载属性文件   -->
-    <properties resource="database-conf/db.properties"/>
+<!--    <properties resource="database-conf/db.properties"/>-->
 
     <!-- 为sql映射文件中的输入/输出参数设置类型别名 -->
     <typeAliases>
         <package name="com.team.SMS.bean"/>
     </typeAliases>
 
-    <!--    配置环境-->
-    <environments default="development">
-        <environment id="development">
-            <!--     使用JDBC事务       -->
-            <transactionManager type="JDBC"/>
-            <!-- 数据库连接使用  指定数据源，使用数据库连接池 -->
-            <dataSource type="POOLED">
-                <property name="driver" value="${jdbc.driver}"/>
-                <property name="url" value="${jdbc.url}"/>
-                <property name="username" value="${jdbc.username}"/>
-                <property name="password" value="${jdbc.password}"/>
-            </dataSource>
-        </environment>
-    </environments>
+<!--    &lt;!&ndash;    配置环境&ndash;&gt;-->
+<!--    <environments default="development">-->
+<!--        <environment id="development">-->
+<!--            &lt;!&ndash;     使用JDBC事务       &ndash;&gt;-->
+<!--            <transactionManager type="JDBC"/>-->
+<!--            &lt;!&ndash; 数据库连接使用  指定数据源，使用数据库连接池 &ndash;&gt;-->
+<!--            <dataSource type="POOLED">-->
+<!--                <property name="driver" value="${jdbc.driver}"/>-->
+<!--                <property name="url" value="${jdbc.url}"/>-->
+<!--                <property name="username" value="${jdbc.username}"/>-->
+<!--                <property name="password" value="${jdbc.password}"/>-->
+<!--            </dataSource>-->
+<!--        </environment>-->
+<!--    </environments>-->
 
-    <!-- 引用映射文件 -->
-    <mappers>
-        <mapper resource="mapper/AdminMapper.xml"/>
-    </mappers>
+<!--    &lt;!&ndash; 引用映射文件 &ndash;&gt;-->
+<!--    <mappers>-->
+<!--        <mapper resource="mapper/AdminMapper.xml"/>-->
+<!--        <mapper resource="mapper/ClazzMapper.xml"/>-->
+<!--        <mapper resource="mapper/GradeMapper.xml"/>-->
+<!--        <mapper resource="mapper/StudentMapper.xml"/>-->
+<!--        <mapper resource="mapper/TeacherMapper.xml"/>-->
+<!--    </mappers>-->
 
 </configuration>

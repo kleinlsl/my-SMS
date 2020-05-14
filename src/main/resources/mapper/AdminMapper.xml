@@ -37,7 +37,7 @@
         VALUES (#{name}, #{gender}, #{password}, #{email}, #{telephone}, #{address}, #{portrait_path})
     </insert>
 
-    <!-- 根据姓名模糊查询指定/所有管理员信息 列表 -->
+    <!-- 根据姓名模糊查询指定|所有管理员信息 列表 -->
     <select id="selectList" parameterType="admin" resultType="com.team.SMS.bean.Admin">
         SELECT id, name, gender, password, email, telephone, address, portrait_path
         FROM tb_admin
@@ -49,7 +49,7 @@
         </where>
     </select>
 
-    <!-- 根据id更新指定管理员信息 -->
+    <!-- 根据id更新指定管理员信息 :不更新密码-->
     <update id="update" parameterType="admin">
         UPDATE tb_admin
         <set>

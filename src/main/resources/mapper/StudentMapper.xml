@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="pers.huangyuhui.sms.dao.StudentMapper">
+<mapper namespace="com.team.SMS.dao.StudentMapper">
 
     <!-- 验证登录信息是否正确 -->
-    <select id="login" parameterType="loginform" resultType="pers.huangyuhui.sms.bean.Student">
+    <select id="login" parameterType="loginform" resultType="com.team.SMS.bean.Student">
         SELECT id,
                sno,
                name,
@@ -21,7 +21,7 @@
     </select>
 
     <!-- 根据班级与学生名获取指定/全部学生信息列表 -->
-    <select id="selectList" parameterType="student" resultType="pers.huangyuhui.sms.bean.Student">
+    <select id="selectList" parameterType="student" resultType="com.team.SMS.bean.Student">
         SELECT id, sno, name, gender, password, portrait_path, email, telephone, address, introducation, clazz_name
         FROM tb_student
         <where>
@@ -35,7 +35,7 @@
     </select>
 
     <!-- 根据学号查询指定学生信息 -->
-    <select id="findBySno" resultType="student" parameterType="pers.huangyuhui.sms.bean.Student">
+    <select id="findBySno" resultType="student" parameterType="com.team.SMS.bean.Student">
         SELECT id,
                sno,
                name,

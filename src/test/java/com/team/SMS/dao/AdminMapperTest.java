@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * @project: my-SMS
@@ -42,8 +43,8 @@ public class AdminMapperTest {
             e.printStackTrace();
         }
         finally {
-            // 获得UserInfoMapper接口的代理对象
-         adminMapper= sqlSession.getMapper(AdminMapper.class);
+            // 获得Mapper接口的代理对象
+            adminMapper= sqlSession.getMapper(AdminMapper.class);
         }
     }
 
@@ -92,31 +93,85 @@ public class AdminMapperTest {
         }
     }
 
-//
-//    /**
-//     * @description: 添加管理员信息
-//     * @param:
-//     * @date: 2020/5/11 - 20:24
-//     * @return:
-//     */
+
+    /**
+     * @description: 添加管理员信息
+     * @param:
+     * @date: 2020/5/11 - 20:24
+     * @return:
+     */
 //    int insert(Admin admin);
-//
-//    /**
-//     * @description: 根据姓名查询指定/所有管理员信息列表
-//     * @param:
-//     * @date: 2020/5/11 - 20:25
-//     * @return:
-//     */
+    @Test
+    public void insert(){
+        //创建管理员对象
+        Admin admin =new Admin();
+        admin.setName("klein");
+        admin.setPassword("klein");
+        admin.setGender('男');
+        admin.setEmail("2445859460@qq.com");
+        admin.setTelephone("15036455256");
+        admin.setAddress("洛阳市");
+
+
+        //添加管理员
+        int res=adminMapper.insert(admin);
+        if (res>0){
+            System.out.println("inster is success!");
+        }
+        else {
+            System.out.println("insert is fail");
+        }
+
+    }
+
+    /**
+     * @description: 根据姓名模糊查询指定|所有管理员信息 列表
+     * @param:
+     * @date: 2020/5/11 - 20:25
+     * @return:
+     */
 //    List<Admin> selectList(Admin admin);
-//
-//    /**
-//     * @description: 根据id更新指定管理员信息列表
-//     * @param:
-//     * @date: 2020/5/11 - 20:26
-//     * @return:
-//     */
+    @Test
+    public void selectList(){
+        //创建管理员对象
+        Admin admin =new Admin();
+        admin.setName("k");
+        List<Admin> adminList=adminMapper.selectList(admin);
+        if (adminList!=null){
+            for (Admin admin1:adminList){
+                System.out.println(admin1);
+            }
+        }
+
+    }
+
+    /**
+     * @description: 根据id更新指定管理员信息列表
+     * @param:
+     * @date: 2020/5/11 - 20:26
+     * @return:
+     */
 //    int update(Admin admin);
-//
+    @Test
+    public void update(){
+        //创建管理员对象
+        Admin admin =new Admin();
+        admin.setId(156);
+        admin.setGender('男');
+        admin.setEmail("2445859460@qq.com");
+        admin.setTelephone("132456789562");
+        admin.setAddress("洛阳市");
+        System.out.println(admin);
+
+        int res=adminMapper.update(admin);
+        if (res>0){
+            System.out.println("update is success!");
+        }
+        else {
+            System.out.println("update is fail!");
+        }
+    }
+
 //    /**
 //     * @description: 根据id修改指定管理员密码
 //     * @param:
@@ -124,7 +179,25 @@ public class AdminMapperTest {
 //     * @return:
 //     */
 //    int updatePassword(Admin admin);
-//
+    @Test
+    public void updatePassword(){
+        //创建管理员对象
+        Admin admin =new Admin();
+        admin.setId(156);
+        admin.setPassword("031516");
+
+        System.out.println(admin);
+
+        //通过代理对象，调用接口
+        int res=adminMapper.updatePassword(admin);
+        if (res>0){
+            System.out.println("updatePassword is success!");
+        }
+        else {
+            System.out.println("updatePassword is faile!");
+        }
+    }
+
 //    /**
 //     * @description:  根据id删除指定管理员信息
 //     * @param:
@@ -132,6 +205,18 @@ public class AdminMapperTest {
 //     * @return:
 //     */
 //    int deleteById(Integer[] ids);
+    @Test
+    public void deleteById(){
+        //创建要删除的id列表
+        Integer ids[]={156,157};
+        int res=adminMapper.deleteById(ids);
+        if (res>0){
+            System.out.println("deleteById is success!");
+        }
+        else {
+            System.out.println("deleteById is faile!");
+        }
+    }
 
     @After
     public void destroy() {
