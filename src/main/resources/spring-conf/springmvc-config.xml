@@ -13,7 +13,7 @@
     <description>Spring-MVC configuration file</description>
 
     <!-- 启用注解扫描器: 扫描被@Controller注解的类 -->
-    <context:component-scan base-package="com.team.SMS.controller"/>
+    <context:component-scan base-package="com.team.sms.controller"/>
 
     <!-- 加载注解驱动 -->
     <mvc:annotation-driven/>
@@ -29,7 +29,7 @@
             <mvc:exclude-mapping path="/static/easyui/**"/>
             <mvc:exclude-mapping path="/system/login"/>
             <mvc:exclude-mapping path="/system/getVerifiCodeImage"/>
-            <bean class="com.team.SMS.interceptor.LoginInterceptor"/>
+            <bean class="com.team.sms.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 

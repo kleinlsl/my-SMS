@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.team.SMS.dao.AdminMapper">
+<mapper namespace="com.team.sms.dao.AdminMapper">
 
     <!-- 验证登录信息是否正确 -->
-    <select id="login" parameterType="loginForm" resultType="com.team.SMS.bean.Admin">
+    <select id="login" parameterType="loginForm" resultType="com.team.sms.bean.Admin">
         SELECT id,
                name,
                gender,
@@ -18,7 +18,7 @@
     </select>
 
     <!-- 根据id查询指定管理员信息 -->
-    <select id="findByName" parameterType="String" resultType="com.team.SMS.bean.Admin">
+    <select id="findByName" parameterType="String" resultType="com.team.sms.bean.Admin">
         SELECT id,
                name,
                gender,
@@ -38,7 +38,7 @@
     </insert>
 
     <!-- 根据姓名模糊查询指定|所有管理员信息 列表 -->
-    <select id="selectList" parameterType="admin" resultType="com.team.SMS.bean.Admin">
+    <select id="selectList" parameterType="admin" resultType="com.team.sms.bean.Admin">
         SELECT id, name, gender, password, email, telephone, address, portrait_path
         FROM tb_admin
         <where>

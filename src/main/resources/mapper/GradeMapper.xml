@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.team.SMS.dao.GradeMapper">
+<mapper namespace="com.team.sms.dao.GradeMapper">
 
     <!-- 根据年级名称查询指定/全部年级信息列表 -->
-    <select id="selectList" parameterType="grade" resultType="com.team.SMS.bean.Grade">
+    <select id="selectList" parameterType="grade" resultType="com.team.sms.bean.Grade">
         SELECT id, name, manager, email, telephone, introducation
         FROM ssm_sms.tb_grade
         <where>
@@ -14,13 +14,13 @@
     </select>
 
     <!-- 查询所有年级列表信息(用于在班级管理页面中获取年级信息) -->
-    <select id="selectAll" resultType="com.team.SMS.bean.Grade">
+    <select id="selectAll" resultType="com.team.sms.bean.Grade">
         SELECT id, name, manager, email, telephone, introducation
         FROM ssm_sms.tb_grade
     </select>
 
     <!-- 根据年级名称查询指定年级信息 -->
-    <select id="findByName" parameterType="String" resultType="com.team.SMS.bean.Grade">
+    <select id="findByName" parameterType="String" resultType="com.team.sms.bean.Grade">
         SELECT id, name, manager, email, telephone, introducation
         FROM ssm_sms.tb_grade
         WHERE name = #{name}
