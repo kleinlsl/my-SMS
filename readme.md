@@ -1,7 +1,6 @@
 # my-SMS
 
 ## 前言
-> 该项目是对
 > 复现一个基于SSM的学生管理系统
 >
 > github链接： [my-SMS](https://github.com/kleinlsl/my-SMS) 
