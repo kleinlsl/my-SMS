@@ -4,8 +4,7 @@
 > 复现一个基于SSM的学生管理系统
 >
 > github链接： [my-SMS](https://github.com/kleinlsl/my-SMS) 
->
-> 作者： *`黄宇辉`*  
+  
 
 ## 基于 SSM 的简单学生管理系统 
 
