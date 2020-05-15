@@ -74,7 +74,7 @@
         Student Management System — SSM
     </h3>
 </div>
-<div class="loginWraper">
+<div class="loginWraper2">
     <div id="loginform" class="loginBox">
         <form id="form" class="form form-horizontal" method="post" action="#">
             <!-- 用户身份信息 -->

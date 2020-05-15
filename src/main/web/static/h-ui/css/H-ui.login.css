@@ -17,7 +17,7 @@ body {
 .header {
 	top: 0;
 	height: 60px;
-	background: #00358e;
+	background: #00358e2b;
 	padding: 0;
 }
 
@@ -31,7 +31,16 @@ body {
 	z-index: 1;
 	background: #ffffff url(../images/login-bg.jpg) no-repeat center
 }
-
+.loginWraper2 {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	background: #ffffff url(../images/login-bg2.jpg) no-repeat center
+}
 .loginBox {
 	position: absolute;
 	width: 617px;
@@ -112,7 +121,7 @@ body {
 	text-align: center;
 	color: #fff;
 	font-size: 12px;
-	background-color: #6b6551
+	background-color: #6b65516b;
 }
 
 #ie6-warning {
