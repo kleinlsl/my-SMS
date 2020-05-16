@@ -48,7 +48,9 @@ public class LoginInterceptor implements HandlerInterceptor {
             if(userName!=null && SessionSave.isSessionIdAvailable(userName,session.getId())){
                 return true;
             }
-//            return true;
+            else {
+                request.getSession().setAttribute("loginOut","用户已在其他地方登录，请注意账号安全！");
+            }
         }
         //用户未登录,拦击其请求并将其转发到用户登录页面
         request.getRequestDispatcher("/WEB-INF/view/system/login.jsp").forward(request, response);

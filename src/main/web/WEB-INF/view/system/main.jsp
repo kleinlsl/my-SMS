@@ -27,7 +27,7 @@
                 width: 360,
                 height: 50,
                 title: '推送',
-                msg: '很开心你能体现这个小小小项目哟 ! （づ￣3￣）づ╭❤～ ',
+                msg: '欢迎您能使用这个小小小项目哟 ! （づ￣3￣）づ╭❤～ ',
                 showSpeed: 1500,
                 timeout: 0,
                 showType: 'slide'

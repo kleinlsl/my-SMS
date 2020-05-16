@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!-- use EL-Expression-->
 <%@ page isELIgnored="false" %>
+<!-- use JSTL -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,6 +25,10 @@
     <!-- 页面事件 -->
     <script type="text/javascript">
         $(function () {
+            <c:if test="${loginOut != '' && loginOut != null}">
+                var louginOut="${loginOut}"
+                $.messager.alert("提示", "提示"+louginOut);
+            </c:if>
             //点击图片切换验证码
             $("#vcodeImg").click(function () {
                 this.src = "getVerifiCodeImage?t=" + new Date().getTime();
@@ -61,7 +67,7 @@
                 radioClass: 'iradio-blue',
                 increaseArea: '25%'
             });
-        })
+        }) 
     </script>
 
     <title>学生管理系统 | 登录页面 </title>

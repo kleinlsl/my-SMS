@@ -192,7 +192,7 @@ public class SystemController {
          */
         request.getSession().removeAttribute("userInfo");
         request.getSession().removeAttribute("userType");
-
+        request.getSession().setAttribute("loginOut","用户已退出登录！");
         //注销后重定向到登录页面
         try {
             response.sendRedirect("../index.jsp");
