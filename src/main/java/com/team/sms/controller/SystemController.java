@@ -8,6 +8,7 @@ import com.team.sms.service.AdminService;
 import com.team.sms.service.StudentService;
 import com.team.sms.service.TeacherService;
 import com.team.sms.util.CreateVerifiCodeImage;
+import com.team.sms.util.SessionSave;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -94,7 +95,7 @@ public class SystemController {
         String vcode = (String) request.getSession().getAttribute("verifiCode");
         if ("".equals(vcode)) {
             result.put("success", false);
-            result.put("msg", "长时间为操作,会话已失效,请刷新页面后重试!");
+            result.put("msg", "长时间未操作,会话已失效,请刷新页面后重试!");
             return result;
         } else if (!loginForm.getVerifiCode().equalsIgnoreCase(vcode)) {
             result.put("success", false);
@@ -114,6 +115,7 @@ public class SystemController {
                         session.setAttribute("userInfo", admin);
                         session.setAttribute("userType", loginForm.getUserType());
                         result.put("success", true);
+                        SessionSave.saveLoginSessionId(admin.getName(),request.getRequestedSessionId());
                         return result;
                     }
                 } catch (Exception e) {
@@ -132,6 +134,7 @@ public class SystemController {
                         session.setAttribute("userInfo", student);
                         session.setAttribute("userType", loginForm.getUserType());
                         result.put("success", true);
+                        SessionSave.saveLoginSessionId(student.getName(),request.getRequestedSessionId());
                         return result;
                     }
                 } catch (Exception e) {
@@ -150,6 +153,7 @@ public class SystemController {
                         session.setAttribute("userInfo", teacher);
                         session.setAttribute("userType", loginForm.getUserType());
                         result.put("success", true);
+                        SessionSave.saveLoginSessionId(teacher.getName(),request.getRequestedSessionId());
                         return result;
                     }
                 } catch (Exception e) {

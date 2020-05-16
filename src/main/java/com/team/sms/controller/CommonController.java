@@ -7,8 +7,10 @@ import com.team.sms.service.AdminService;
 import com.team.sms.service.StudentService;
 import com.team.sms.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +25,8 @@ import java.util.Map;
  * @version: 1.0
  * @website:
  */
+@Controller
+@RequestMapping("/common")
 public class CommonController {
 
 
