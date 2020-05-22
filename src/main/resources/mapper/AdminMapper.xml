@@ -72,7 +72,7 @@
 
     <!-- 根据id批量删除管理员信息 -->
     <delete id="deleteById">
-        DELETE FROM ssm_sms.tb_admin WHERE id IN
+        DELETE FROM tb_admin WHERE id IN
         <foreach collection="array" item="ids" open="(" separator="," close=")">
             #{ids}
         </foreach>

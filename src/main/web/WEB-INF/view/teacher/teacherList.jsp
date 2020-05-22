@@ -307,11 +307,11 @@
 
 <!-- 工具栏 -->
 <div id="toolbar">
-    <div style="float: left;"><a id="add" href="javascript:" class="easyui-linkbutton"
-                                 data-options="iconCls:'icon-add',plain:true">添加</a></div>
-    <div style="float: left;" class="datagrid-btn-separator"></div>
-    <%-- 通过JSTL设置用户操作权限: 将修改和删除按钮设置为仅管理员可见 --%>
+    <%-- 通过JSTL设置用户操作权限: 将添加、修改和删除按钮设置为仅管理员可见 --%>
     <c:if test="${userType==1}">
+        <div style="float: left;"><a id="add" href="javascript:" class="easyui-linkbutton"
+                                     data-options="iconCls:'icon-add',plain:true">添加</a></div>
+        <div style="float: left;" class="datagrid-btn-separator"></div>
         <div style="float: left;"><a id="edit" href="javascript:" class="easyui-linkbutton"
                                      data-options="iconCls:'icon-edit',plain:true">修改</a></div>
         <div style="float: left;" class="datagrid-btn-separator"></div>

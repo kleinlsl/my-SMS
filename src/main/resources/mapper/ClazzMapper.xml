@@ -25,7 +25,7 @@
                email,
                telephone,
                grade_name
-        FROM ssm_sms.tb_clazz
+        FROM tb_clazz
     </select>
 
     <!-- 查询指定名称的班级信息 -->
