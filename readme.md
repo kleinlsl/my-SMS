@@ -137,7 +137,8 @@ create table tb_teacher
 - 更改登录页面 (ok)
 - 实现单点登录 (ok)
 - 用户权限调整：增加超级管理员（root）->该用户不可删除
-
+- 系统结构思维导图：
+![系统结构思维导图](https://github.com/kleinlsl/my-SMS/blob/master/src/main/resources/SMS-Xmind.png)
 
 ## 复现演示地址
 
